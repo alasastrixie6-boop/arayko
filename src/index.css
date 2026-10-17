@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-dark: #1f5d2e;
+  --brand-mid: #2f8a4e;
+  --brand-light: #e7f5ec;
+  --brand-gold: #d9a441;
+  --cream: #fffdf7;
+  --charcoal: #2b2b2b;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f3f4f6; }
+::-webkit-scrollbar-thumb { background: #2f8a4e; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #1f5d2e; }
+
+/* Toast animations */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slidein { animation: slideIn 0.3s ease-out; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeinup { animation: fadeInUp 0.4s ease-out; }
+
+/* Page transition */
+.page-enter { opacity: 0; }
+.page-enter-active { opacity: 1; transition: opacity 0.2s; }
+
+/* Image zoom on hover */
+.product-card img { transition: transform 0.3s ease; }
+.product-card:hover img { transform: scale(1.05); }
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+}
